@@ -1,0 +1,23 @@
+{
+  "name": "tapza-care-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm --prefix apps/api run dev",
+    "dev:web": "npm --prefix apps/web run dev",
+    "dev:mobile": "npm --prefix apps/mobile run dev",
+    "build:api": "npm --prefix apps/api run build",
+    "build:web": "npm --prefix apps/web run build",
+    "build:apk": "npm --prefix apps/mobile run build:apk",
+    "seed": "npm --prefix apps/api run seed",
+    "migrate": "npm --prefix apps/api run migrate",
+    "test": "npm --prefix apps/api run test"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}

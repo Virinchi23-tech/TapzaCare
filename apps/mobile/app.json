@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Tapza Care",
+    "slug": "tapza-care",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "splash": {
+      "backgroundColor": "#2563eb",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tapzacare.app"
+    },
+    "android": {
+      "package": "com.tapzacare.app",
+      "versionCode": 1,
+      "permissions": [
+        "INTERNET",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c0a4519f-e570-495b-8650-bf1295b2f747"
+      }
+    },
+    "owner": "virinchi2306"
+  }
+}
