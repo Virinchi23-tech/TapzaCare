@@ -13,8 +13,7 @@ import {
   Alert
 } from 'react-native';
 
-const DEFAULT_API_HOST = '192.168.1.4'; // Host PC Wi-Fi IP address
-const API_PORT = '5000';
+const DEFAULT_API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://192.168.1.4:5000/api';
 
 const FALLBACK_DOCTORS = [
   {
@@ -102,9 +101,9 @@ class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { has
 
 function MainApp() {
   const [activeTab, setActiveTab] = useState<'home' | 'doctors' | 'pharmacy' | 'bookings' | 'profile'>('home');
-  const [serverIp, setServerIp] = useState(DEFAULT_API_HOST);
+  const [serverUrl, setServerUrl] = useState(DEFAULT_API_URL);
   const [isIpModalOpen, setIsIpModalOpen] = useState(false);
-  const [ipInput, setIpInput] = useState(DEFAULT_API_HOST);
+  const [ipInput, setIpInput] = useState(DEFAULT_API_URL);
 
   const [config, setConfig] = useState<any>(null);
   const [doctors, setDoctors] = useState<any[]>(FALLBACK_DOCTORS);
@@ -118,11 +117,11 @@ function MainApp() {
   const [selectedDate, setSelectedDate] = useState('2026-10-05');
   const [connectionStatus, setConnectionStatus] = useState<'connecting' | 'connected' | 'offline'>('connecting');
 
-  const apiBase = `http://${serverIp}:${API_PORT}/api`;
+  const apiBase = serverUrl;
 
   useEffect(() => {
     fetchAllData();
-  }, [serverIp]);
+  }, [serverUrl]);
 
   const fetchAllData = async () => {
     setConnectionStatus('connecting');
@@ -161,7 +160,7 @@ function MainApp() {
 
   const handleSaveServerIp = () => {
     if (!ipInput.trim()) return;
-    setServerIp(ipInput.trim());
+    setServerUrl(ipInput.trim());
     setIsIpModalOpen(false);
   };
 

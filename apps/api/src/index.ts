@@ -53,9 +53,18 @@ app.use('/api', pharmacyRoutes);
 app.use(errorHandler);
 
 if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`\n🚀 Tapza Care API Server running at http://localhost:${PORT}`);
+  const server = app.listen(Number(PORT), '0.0.0.0', () => {
+    console.log(`\n🚀 Tapza Care API Server running at http://0.0.0.0:${PORT}`);
     console.log(`🏥 Health endpoint: http://localhost:${PORT}/api/health\n`);
+  });
+
+  server.on('error', (err: any) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`\n❌ Port ${PORT} is currently in use by another process.`);
+      console.error(`💡 To free port ${PORT} on Windows, run:\n   npx kill-port ${PORT}\n`);
+    } else {
+      console.error('Server error:', err);
+    }
   });
 }
 
