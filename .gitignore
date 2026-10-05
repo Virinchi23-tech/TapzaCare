@@ -47,5 +47,6 @@ web-build/
 *.apk
 *.mp4
 docs/*.mp4
+!docs/TapzaRecordingVideo.mp4
 TapzaCare.apk
 apps/mobile/TapzaCare.apk
