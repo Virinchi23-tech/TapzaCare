@@ -1,5 +1,7 @@
 # Tapza Care — Premium Healthcare Platform
 
+Deployment link- https://tapzacare23.netlify.app
+
 **Tapza Care** is a comprehensive, production-grade healthcare platform featuring:
 - 🛵 **30-Minute Medicine Express Delivery** (Swiggy / Instamart style ordering)
 - 🔐 **Role-Isolated Portals** for Admin, Pharmacist, Doctor, and Patients
