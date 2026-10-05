@@ -41,6 +41,11 @@ logs/
 .DS_Store
 Thumbs.db
 
-# Expo
+# Expo & Mobile Binaries
 .expo/
 web-build/
+*.apk
+*.mp4
+docs/*.mp4
+TapzaCare.apk
+apps/mobile/TapzaCare.apk
